@@ -88,7 +88,7 @@ public class GenerateReleaseNotesTask
     // Matches release notes section and stops capturing before "Summary by" footer (added by bots like Sourcery)
     // Pattern: "== release note(s)? ==" followed by optional whitespace and newline, then captures content
     // until it encounters "\nSummary by" or reaches end of string
-    protected static final Pattern RELEASE_NOTE_PATTERN = Pattern.compile("== release note(s)? ==\\w*\\n?((?:(?!\\nSummary by).)*)", CASE_INSENSITIVE + MULTILINE + DOTALL);
+    protected static final Pattern RELEASE_NOTE_PATTERN = Pattern.compile("== release note(s)? ==\\w*\\n?(.*?)(?=\\s*Summary by|\\z)", CASE_INSENSITIVE + MULTILINE + DOTALL);
     protected static final Pattern HEADER_PATTERN = Pattern.compile("(.*) change(s)$", CASE_INSENSITIVE);
     public static final List<Pattern> VALID_SECTION_HEADERS = ImmutableList.of(
                     "^General.*",

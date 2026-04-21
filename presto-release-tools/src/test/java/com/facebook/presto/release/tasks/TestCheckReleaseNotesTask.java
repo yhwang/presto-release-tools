@@ -41,6 +41,7 @@ public class TestCheckReleaseNotesTask
             .put("release_notes_2.txt", true)
             .put("release_notes_with_trailing_content.txt", true)
             .put("release_notes_same_line.txt", true)
+            .put("release_notes_with_sourcery_bot.txt", true)
             .build();
 
     private CheckReleaseNotesTask checkReleaseNotesTask = new CheckReleaseNotesTask();

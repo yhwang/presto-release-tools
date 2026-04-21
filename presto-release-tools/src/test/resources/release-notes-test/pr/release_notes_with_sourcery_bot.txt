@@ -1,0 +1,48 @@
+  Motivation and Context
+  
+  
+  Impact
+  
+  Test Plan
+  
+  Contributor checklist
+  
+   Please make sure your submission complies with our contributing guide, in particular code style and commit standards.
+   PR description addresses the issue accurately and concisely.  If the change is non-trivial, a GitHub Issue is referenced.
+   Documented new properties (with its default value), SQL syntax, functions, or other functionality.
+   If release notes are required, they follow the release notes guidelines.
+   Adequate tests were added if applicable.
+   CI passed.
+   If adding new dependencies, verified they have an OpenSSF Scorecard score of 5.0 or higher (or obtained explicit TSC approval for lower scores).
+  
+  Release Notes
+  Please follow release notes guidelines and fill in the release notes below.
+  == RELEASE NOTES ==
+  
+  Postgresql Connector Changes
+  * Add view support for the presto postgresql connector
+  
+  Summary by Sourcery
+  Add PostgreSQL-specific JDBC metadata to support connector-level view operations.
+  New Features:
+  
+  Enable listing, retrieving, creating, and dropping PostgreSQL views through the Presto PostgreSQL connector.
+  
+  Enhancements:
+  
+  Introduce a PostgreSQL-specific JdbcMetadata implementation and extend the base JDBC metadata factory to instantiate it when using the PostgreSQL client.
+  
+  Summary by Sourcery
+  Add PostgreSQL-specific JDBC metadata and client support to manage views through the PostgreSQL connector.
+  New Features:
+  
+  Enable creating, replacing, dropping, listing, and reading PostgreSQL views via the Presto PostgreSQL connector.
+  
+  Enhancements:
+  
+  Introduce a PostgreSqlMetadata implementation wired from JdbcMetadataFactory to add PostgreSQL-specific view handling.
+  Extend PostgreSqlClient with helpers to discover view schemas, list views, and translate PostgreSQL view definitions into Presto view metadata.
+  
+  Tests:
+  
+  Add PostgreSQL integration tests covering view creation, replacement, deletion, listing, and querying across a variety of SQL patterns and types.
